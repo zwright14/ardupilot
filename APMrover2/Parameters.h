@@ -93,6 +93,7 @@ public:
         k_param_NavEKF2,
         k_param_g2,                 // 2nd block of parameters
         k_param_NavEKF3,
+		k_param_ied_sensor,
 
         // 140: battery controls
         k_param_battery_monitoring = 140,   // deprecated, can be deleted
@@ -264,6 +265,9 @@ public:
     AP_Int8     mode5;
     AP_Int8     mode6;
 
+    // ied sensor
+    AP_Int16     ied_sensor;
+
     Parameters() {}
 };
 
@@ -365,6 +369,9 @@ public:
 
     // windvane
     AP_WindVane windvane;
+
+    // ied status
+    AP_IedStatus iedstatus;
 
     // Airspeed
     AP_Airspeed airspeed;

@@ -34,6 +34,7 @@
 #include <AP_Camera/AP_Camera.h>                    // Camera triggering
 #include <AP_Compass/AP_Compass.h>                  // ArduPilot Mega Magnetometer Library
 #include <AP_Declination/AP_Declination.h>          // Compass declination library
+#include <AP_IedStatus/AP_IedStatus.h>				// Ied status library
 #include <AP_InertialSensor/AP_InertialSensor.h>    // Inertial Sensor (uncalibated IMU) Library
 #include <AP_L1_Control/AP_L1_Control.h>
 #include <AP_Math/AP_Math.h>                        // ArduPilot Mega Vector/Matrix math Library

@@ -343,6 +343,10 @@ bool GCS_MAVLINK_Rover::try_send_message(enum ap_message id)
         }
         break;
     }
+    case MSG_IED_STATUS:
+    	CHECK_PAYLOAD_SIZE(IED_STATUS);
+    	rover.g2.iedstatus.send_ied_status(chan);
+    	break;
 
     default:
         return GCS_MAVLINK::try_send_message(id);
@@ -515,6 +519,7 @@ static const ap_message STREAM_EXTRA3_msgs[] = {
     MSG_RPM,
     MSG_WHEEL_DISTANCE,
     MSG_ESC_TELEMETRY,
+	MSG_IED_STATUS,
 };
 static const ap_message STREAM_PARAMS_msgs[] = {
     MSG_NEXT_PARAM
