@@ -26,6 +26,7 @@ const AP_Param::GroupInfo AP_IedStatus::var_info[] = {
 AP_IedStatus::AP_IedStatus()
 {
     AP_Param::setup_object_defaults(this, var_info);
+    init();
 }
 
 // return true if wind vane is enabled
