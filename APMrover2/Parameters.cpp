@@ -217,6 +217,13 @@ const AP_Param::Info Rover::var_info[] = {
     // @User: Standard
     GSCALAR(mode6,           "MODE6",         Mode::Number::MANUAL),
 
+    // @Param: IED_SENSOR
+    // @DisplayName: Ied Sensor
+    // @Description: Voltage reading from the Ied Sensor
+    // @Values: -32768 32767
+    // @User: Standard
+    GSCALAR(ied_sensor,           "IED_SENSOR",         DEFAULT_IED_SENSOR),
+
     // @Param: TURN_MAX_G
     // @DisplayName: Turning maximum G force
     // @Description: The maximum turning acceleration (in units of gravities) that the rover can handle while remaining stable. The navigation code will keep the lateral acceleration below this level to avoid rolling over or slipping the wheels in turns
@@ -558,6 +565,10 @@ const AP_Param::GroupInfo ParametersG2::var_info[] = {
     // @Path: ../libraries/AP_WindVane/AP_WindVane.cpp
     AP_SUBGROUPINFO(windvane, "WNDVN_", 31, ParametersG2, AP_WindVane),
 
+    // @Group: IED_
+    // @Path: ../libraries/AP_IedStatus/AP_IedStatus.cpp
+    AP_SUBGROUPINFO(iedstatus, "IED_", 32, ParametersG2, AP_IedStatus),
+
     // 32 to 36 were old sailboat params
 
     // @Group: ARSPD
@@ -683,6 +694,7 @@ ParametersG2::ParametersG2(void)
     avoid(),
     follow(),
     windvane(),
+	iedstatus(),
     airspeed(),
     wp_nav(attitude_control, rover.L1_controller),
     sailboat()

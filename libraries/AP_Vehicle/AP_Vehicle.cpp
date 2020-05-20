@@ -2,6 +2,8 @@
 
 #include <AP_Common/AP_FWVersion.h>
 
+#include "ch.h"
+
 #define SCHED_TASK(func, rate_hz, max_time_micros) SCHED_TASK_CLASS(AP_Vehicle, &vehicle, func, rate_hz, max_time_micros)
 
 /*
@@ -41,6 +43,7 @@ extern AP_Vehicle& vehicle;
  */
 void AP_Vehicle::setup()
 {
+	chThdSleep(chTimeMS2I(500));
     // load the default values of variables listed in var_info[]
     AP_Param::setup_sketch_defaults();
 
